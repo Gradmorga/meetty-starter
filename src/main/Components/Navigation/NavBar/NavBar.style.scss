@@ -1,0 +1,49 @@
+
+@import "../../../global/vars.style";
+
+.nav-bar {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    &::before {
+        content: "";
+
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -10;
+
+        background-color: rgba(0, 0, 0, .4);
+        filter: blur(40px);
+    }
+}
+
+.nav-bar__indicator {
+    width: 40vw;
+    display: none;
+
+    transition: height .4s ease-in-out;
+
+    text-decoration: none;
+
+    @media (min-width: $desktop-width) {
+        display: block;
+        width: 20vw;
+    }
+
+    & :not(:last-child) {
+        margin-right: 2vw;
+    }
+
+    &--active {
+        display: block;
+    }
+}

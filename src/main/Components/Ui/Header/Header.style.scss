@@ -1,0 +1,203 @@
+
+@import "src/main/global/vars.style";
+
+
+$header-link-color:        #008B9E;
+$header-link-active-color: #ffffff;
+
+$nav-link-fontSize-mobile:  15px;
+$nav-link-fontSize-tablet:  18px;
+$nav-link-fontSize-desktop: 22px;
+
+$social-link-fontSize-mobile:  13px;
+$social-link-fontSize-tablet:  15px;
+$social-link-fontSize-desktop: 18px;
+
+$social-bg: radial-gradient(664.71% 73.68% at 117.65% 104.54%, #003155 0%, #001A31 100%);
+$social-leftBorder: 2px solid #00465E;
+
+$header-sizes-desktop: 100px;
+$header-sizes-tablet:  11vw;
+$header-sizes-mobile:  14vw;
+
+
+.header {
+    position: fixed;
+    right:    0;
+    top:      0;
+}
+
+.header__link {
+    transition: color .4s ease-in-out;
+
+    display: block;
+
+    font-family:     "Rajdhani", serif;
+    font-weight:     bold;
+    text-decoration: none;
+    color:           $header-link-color;
+}
+
+.header__nav-wrapper {
+    position: fixed;
+    top:      0;
+    right:    $header-sizes-mobile;
+
+    height: $header-sizes-mobile;
+
+    transition: transform 1s;
+    transform:  translateX(100vw);
+
+    @media (min-width: $tablet-width) {
+        right:  $header-sizes-tablet;
+        height: $header-sizes-tablet;
+    }
+
+    @media (min-width: $desktop-width) {
+        right:  $header-sizes-desktop;
+        height: $header-sizes-desktop;
+    }
+
+    &--active {
+        transform: translateX(0);
+    }
+}
+
+.header__social-wrapper {
+    position: fixed;
+    top:      $header-sizes-mobile;
+    right:    0;
+    bottom:   0;
+
+    width: $header-sizes-mobile;
+
+    background: $social-bg;
+
+    transition: transform .7s ease-in-out;
+
+    transform: translateY(-100vh);
+
+    border-left: $social-leftBorder;
+    box-sizing:  border-box;
+
+
+    @media (min-width: $tablet-width) {
+        top:   $header-sizes-tablet;
+        width: $header-sizes-tablet;
+    }
+
+    @media (min-width: $desktop-width) {
+        top:   $header-sizes-desktop;
+        width: $header-sizes-desktop;
+    }
+
+    &--active {
+        transform: translateY(0);
+    }
+}
+
+.header__nav-links {
+    align-items: center;
+
+    height: 100%;
+}
+
+.header__social-links {
+    flex-flow:       column nowrap;
+    align-items:     center;
+    justify-content: space-around;
+
+    width:  100%;
+    height: 100%;
+}
+
+.header__nav-link {
+    padding: 0 25px;
+
+    font-size: $nav-link-fontSize-mobile;
+
+    @media (min-width: $tablet-width) {
+        font-size: $nav-link-fontSize-tablet;
+    }
+
+    @media (min-width: $desktop-width) {
+        font-size: $nav-link-fontSize-desktop;
+    }
+
+    &--active {
+        color: $header-link-active-color;
+    }
+}
+
+.header__social-link  {
+    transform: rotate(-90deg);
+
+    font-size: $social-link-fontSize-mobile;
+
+    @media (min-width: $tablet-width) {
+        font-size: $social-link-fontSize-tablet;
+    }
+
+    @media (min-width: $desktop-width) {
+        font-size: $social-link-fontSize-desktop;
+    }
+
+    &:hover {
+        color: $header-link-active-color;
+    }
+}
+
+.header__button {
+    background: none;
+    box-sizing: border-box;
+    border: none;
+}
+
+.header__switcher--active {
+    .switcher__icon {
+        path { fill: #00DEED; }
+    }
+}
+
+.switcher__icon {
+    path { fill: white; }
+}
+
+.header__toggle {
+    position: relative;
+
+    transition: background-color .4s ease-in-out;
+
+    display: block;
+    height:  $header-sizes-mobile;
+    width:   $header-sizes-mobile;
+
+    @media (min-width: $tablet-width) {
+        height: $header-sizes-tablet;
+        width:  $header-sizes-tablet;
+    }
+
+    @media (min-width: $desktop-width) {
+        height: $header-sizes-desktop;
+        width:  $header-sizes-desktop;
+    }
+
+    &--active {
+        $toggle-icon-active-color: #00DEED;
+        $toggle-active-color:      #00465E;
+
+        background-color: $toggle-active-color;
+
+        .toggle__icon {
+            fill: $toggle-icon-active-color;
+        }
+    }
+}
+
+.toggle__icon {
+    position: absolute;
+    top: calc(50% - 11px);
+    left: calc(50% - 11px);
+
+    transition: fill .5s ease-in-out;
+}

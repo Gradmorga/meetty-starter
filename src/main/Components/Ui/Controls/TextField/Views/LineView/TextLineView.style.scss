@@ -1,0 +1,46 @@
+
+@import "../../../../../../global/vars.style";
+
+.text-line {
+    width: 100%;
+
+    padding:    0;
+    margin-top: -5px;
+    box-sizing: border-box;
+
+    outline: none;
+
+    border-top:          none;
+    border-left:         none;
+    border-right:        none;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+
+    position: relative;
+
+    color: white;
+
+    background-color: transparent;
+
+    font-size:   17px;
+    font-weight: bold;
+    font-family: "Rajdhani", serif;
+
+    @media (min-width: $tablet-width) {
+        padding: 10px 0 0;
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+        background-color: transparent;
+    }
+}
+
+.text-line--normal {
+    transition: border-bottom-color 1s ease-in-out;
+
+    border-bottom-color: #00DEED;
+    color: white;
+}

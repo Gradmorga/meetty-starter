@@ -1,0 +1,32 @@
+
+
+.loader--normal {
+    color: #00DEED;
+    background-color: #00DEED;
+
+    &:after, &:before {
+      background-color: #00DEED;
+    }
+
+  &-enter {
+    opacity: 0;
+  }
+
+  &-enter-active {
+    opacity: 1;
+    transition: opacity .4s ease-in-out;
+  }
+
+  &-exit {
+    opacity: 1;
+  }
+
+  &-exit-active {
+    opacity: 0;
+    transition: opacity .4s ease-in-out;
+  }
+
+  &-exit-done {
+    opacity: 0;
+  }
+}

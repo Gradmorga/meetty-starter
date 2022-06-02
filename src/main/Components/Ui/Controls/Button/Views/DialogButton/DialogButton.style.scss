@@ -1,0 +1,45 @@
+
+
+.dialog-button {
+  box-sizing: border-box;
+
+  border:     none;
+  background: none;
+
+  transition: background-color, color .4s ease-in-out;
+}
+
+.dialog-button--confirm {
+  color: #00DEED;
+  flex-grow: 2;
+
+  &:hover {
+    background-color: #00DEED;
+    color: black;
+  }
+}
+
+.dialog-button--reject {
+  color: red;
+  flex-grow: 2;
+
+  &:hover {
+    background-color: red;
+    color: black;
+  }
+}
+
+.dialog-button--neutral {
+  color: #e2e2e2;
+  flex-grow: 1;
+
+  &:hover {
+    background-color: #e2e2e2;
+    color: black;
+  }
+}
+
+.dialog-button--normal {
+  font-family: "Rajdhani", serif;
+  font-weight: 600;
+}

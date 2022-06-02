@@ -1,0 +1,19 @@
+
+
+.label-item--normal {
+  color:            white;
+  background-color: transparent;
+
+  transition: background-color .3s ease-in-out;
+
+  font-weight: 600;
+  font-family: "Rajdhani", serif;
+
+  &:hover {
+    background-color: #00465E;
+  }
+}
+
+.label-item--current {
+    color: #00DEED;
+}

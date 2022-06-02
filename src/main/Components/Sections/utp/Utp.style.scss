@@ -1,0 +1,268 @@
+
+@import "../../../global/vars.style";
+
+.utp {
+    background: radial-gradient(106.39% 52.6% at 78.75% 97.36%, #003155 0%, #001A31 100%);;
+
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $desktop-width) {
+        flex-direction: row;
+        background: radial-gradient(79.31% 229.93% at 0% 0%, rgba(0, 224, 243, 0.38) 0%, #001A31 99.94%), #001528;
+    }
+}
+
+.utp__wrapper {
+    height: 50vh;
+    width: 100vw;
+
+    padding: 10px;
+
+    @media (min-width: $desktop-width) {
+        height: 100vw;
+        width: 50vw;
+    }
+}
+
+.utp__web-wrapper {
+    order: 2;
+
+    height: 50vh;
+    width: 100vw;
+
+    @media (min-width: $desktop-width) {
+        order: inherit;
+        height: 100vh;
+        width: 50vw;
+    }
+}
+
+.main-title {
+    font-family:    "Rajdhani", serif;
+    font-weight:    600;
+    font-size:      100px;
+    line-height:    95px;
+    text-align:     left;
+    text-transform: uppercase;
+
+    margin: 0;
+
+    @media (min-width: $tablet-width) {
+        font-size:   150px;
+        line-height: 120px;
+    }
+
+    @media (min-width: $desktop-width) {
+        font-size:   205px;
+        line-height: 160px;
+    }
+}
+
+.utp__main-title {
+    background:
+            radial-gradient(42.82% 100.71% at 18.75% -16.96%, rgba(221, 0, 158, 0.82) 0%, rgba(202, 0, 146, 0) 100%),
+            radial-gradient(83.87% 144.64% at 58.11% -36.79%, rgba(196, 0, 141, 0.83) 0%, rgba(221, 0, 158, 0) 100%),
+            radial-gradient(78.21% 92.68%  at 41.89% 41.79%,  rgba(202, 0, 146, 0.96) 0%, rgba(0, 0, 0, 0)     100%),
+            radial-gradient(35.6% 56.79%   at 41.3%  77.68%,  rgba(109, 2, 100, 0.63) 0%, rgba(109, 2, 100, 0) 100%),
+            linear-gradient(295deg, #00DEED 38.22%, rgba(0, 222, 237, 0) 55.52%);
+
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.main-subtitle {
+    font-family:    "Rajdhani", serif;
+    font-weight:    600;
+    font-size:      9vw;
+    line-height:    9vw;
+    text-transform: uppercase;
+
+    @media (min-width: $desktop-width) {
+        font-size: 4vw;
+        line-height: 4vw;
+    }
+}
+
+.utp__main-subtitle {
+    background:
+            linear-gradient(77.51deg, rgba(193, 0, 122, 0.8) 24.55%, rgba(0, 0, 0, 0) 59.84%),
+            radial-gradient(29.43% 111.87% at 42.99% 109.06%, #610153 0%, #00DEED 100%);
+
+    margin: 20px 0 0;
+
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hexagon--big {
+    width: 25vw;
+    height: 25vw;
+}
+
+.hexagon--normal {
+    width: 22vw;
+    height: 22vw;
+
+    @media (min-width: $tablet-width) {
+        width: 16vw;
+        height: 16vw;
+    }
+}
+
+.hexagon--small {
+    width: 18vw;
+    height: 18vw;
+
+    @media (min-width: $tablet-width) {
+        width: 13vw;
+        height: 13vw;
+    }
+}
+
+.hexagon--button {
+    margin: 0;
+    padding: 0;
+    border: none;
+
+    &:hover, &:focus {
+        .hexagon__title {
+            color: #00DEED;
+
+            &::after {
+                border-left-color: #00DEED;
+                right: 20%;
+            }
+        }
+
+        background-color: #610153;
+    }
+}
+
+.hexagon__title {
+    position: absolute;
+    top:      30%;
+    left:     0;
+    right:    0;
+
+    text-align:     center;
+    text-transform: uppercase;
+    color:          black;
+
+    font-size:   3vw;
+    font-weight: 600;
+    font-family: "Rajdhani", serif;
+
+    transition: color .5s ease-in-out;
+
+    @media (min-width: $tablet-width) {
+        font-size: 2vw;
+    }
+
+    &::after {
+        content: "";
+        display: block;
+
+        position: absolute;
+        right:    50%;
+        top:      110%;
+
+        border-top:    5px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-left:   5px solid black;
+
+        transition: background-color, right .5s ease-in-out;
+
+        @media (min-width: $tablet-width) {
+            border-top:    15px solid transparent;
+            border-bottom: 15px solid transparent;
+            border-left:   15px solid black;
+        }
+    }
+}
+
+.hexagon {
+    background: #00DEED;
+    position: absolute;
+
+    -webkit-clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+    clip-path:         polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+
+    animation: fly 5s infinite ease-in-out;
+    transition: background-color, color .5s ease-in-out;
+
+    @keyframes fly {
+        0%  { transform: translateY(0);    }
+        50% { transform: translateY(30px); }
+    }
+
+    &--1 {
+        top: 0;
+        left: 60%;
+
+        @media (min-width: $desktop-width) {
+            top:  55%;
+            left: 70%;
+        }
+    }
+
+    &--2 {
+        top:  10%;
+        left:  35%;
+
+        animation-delay: .3s;
+
+        @media (min-width: $desktop-width) {
+            top:  20%;
+            left:  45%;
+        }
+    }
+
+    &--3 {
+        top:  10%;
+        left: -15%;
+
+        animation-delay: .6s;
+
+        @media (min-width: $desktop-width) {
+            top:  -40%;
+            left: 40%;
+        }
+    }
+
+    &--4 {
+        top: 40%;
+        left: 15%;
+
+        animation-delay: .9s;
+
+        @media (min-width: $desktop-width) {
+            top: -30%;
+            left: -30%;
+        }
+    }
+
+    &--5 {
+        top: 30%;
+        left: 55%;
+
+        animation-delay: 1.2s;
+
+        @media (min-width: $desktop-width) {
+            top: 30%;
+            left: 5%;
+        }
+    }
+
+    &--6 {
+        top: 45%;
+        left: 75%;
+
+        animation-delay: 1.5s;
+
+        @media (min-width: $desktop-width) {
+            top: 50%;
+            left: -40%;
+        }
+    }
+}

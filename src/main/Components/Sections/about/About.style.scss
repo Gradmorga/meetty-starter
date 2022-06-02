@@ -1,0 +1,137 @@
+
+@import "../../../global/vars.style";
+
+$skew: 15deg;
+
+.about {
+  display:        flex;
+  flex-direction: column;
+
+  @media(min-width: $tablet-width) {
+    flex-direction: row;
+  }
+}
+
+.about__item {
+  position: relative;
+  flex-grow: 1;
+
+  margin: 10px 0;
+
+  @media(min-width: $tablet-width) {
+    margin: 0 15px;
+    transform: skew(-$skew);
+  }
+}
+
+.about__icon {
+  position: absolute;
+  top:      15%;
+
+  height: 15vh;
+  width:  100%;
+
+  transition: top .5s ease-in-out, width .5s ease-in-out;
+
+  filter: drop-shadow(0px 0px 10px black);
+
+  @media(min-width: $tablet-width) {
+    top: 30vh;
+
+    transform: skew($skew);
+
+    height: 35vh;
+  }
+
+  &--active {
+    top: 0;
+
+    @media(min-width: $tablet-width) {
+      width: 85%;
+
+      top: 10vh;
+    }
+  }
+}
+
+.about__content {
+  opacity: 0;
+
+  position: absolute;
+  left:     0;
+  right:    0;
+  top:      15vh;
+
+  margin: 0 auto;
+
+  width: 80%;
+
+  @media(min-width: $tablet-width) {
+    top: 45vh;
+
+    transform: skew($skew);
+  }
+}
+
+.about__title {
+  text-align: center;
+}
+
+.about__text {
+  @media (max-width: $tablet-width) {
+    display: none;
+  }
+}
+
+.topic {
+  &-enter      {
+    flex-grow: 2;
+    transition: flex-grow .4s ease-in-out;
+  }
+  &-enter-done { flex-grow: 2; }
+
+  &-exit {
+    flex-grow: 1;
+    transition: flex-grow .4s ease-in-out;
+  }
+}
+
+.topic__content {
+
+  &-enter      {
+    transition: opacity 2s ease-in-out;
+    opacity: 1;
+  }
+  &-enter-done { opacity: 1; }
+
+  &-exit       {
+    transition: opacity .2s ease-in-out;
+    opacity: 0;
+  }
+  &-exit-done  { opacity: 0; }
+}
+
+
+.about__security {
+  background:
+          radial-gradient(127.18% 49.3% at 49.52% 13.92%, rgba(0, 95, 237, 0.4) 0%, rgba(0, 0, 0, 0) 100%),
+          radial-gradient(124.52% 48.27% at 44.63% 94.66%, rgba(0, 95, 237, 0.4) 0%, rgba(0, 0, 0, 0) 100%),
+          #002B52;
+  box-shadow: 0 0 40px 20px rgba(0, 95, 237, 0.3);
+}
+
+.about__social {
+  background:
+          radial-gradient(125.72% 48.73% at 49.52% 13.92%, rgba(0, 222, 237, 0.4) 0%, rgba(0, 0, 0, 0) 100%),
+          radial-gradient(106.13% 50.39% at 52.63% 93.98%, rgba(0, 222, 237, 0.4) 0%, rgba(0, 0, 0, 0) 100%),
+          #002B52;
+  box-shadow: 0 0 40px 20px rgba(0, 222, 237, 0.3)
+}
+
+.about__care {
+  background:
+          radial-gradient(299.32% 65.42% at 46.37% 14.05%, rgba(174, 2, 129, 0.4) 0%, rgba(0, 0, 0, 0) 100%),
+          radial-gradient(311.97% 68.19% at 48.1% 93.94%, rgba(174, 2, 129, 0.4) 0%, rgba(0, 0, 0, 0) 100%),
+          #002B52;
+  box-shadow: 0 0 40px 20px rgba(174, 2, 129, 0.3);
+}

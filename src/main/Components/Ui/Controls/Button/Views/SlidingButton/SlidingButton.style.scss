@@ -1,0 +1,48 @@
+
+@import "src/main/global/vars.style";
+
+
+.button--slider {
+    position: relative;
+    border:   none;
+
+    &:before {
+        content: "";
+
+        position: absolute;
+        left:     20%;
+        top:      0;
+        bottom:   0;
+
+        width: 5px;
+    }
+
+    &:not(:disabled):hover {
+        &:before { left: 35%; }
+    }
+}
+
+.button--slider-normal {
+    background: none;
+    color: #00DEED;
+
+    font-family: "Rajdhani", serif;
+    font-weight: 600;
+
+    &:before {
+        transition: left .4s ease-in-out;
+        background-color: #00DEED;
+    }
+
+    &:disabled {
+        color: gray;
+
+        &:before {
+            background-color: gray;
+        }
+    }
+
+    &:not(:disabled):hover {
+        color: white;
+    }
+}

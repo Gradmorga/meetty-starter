@@ -1,0 +1,12 @@
+
+
+.message {
+
+    &--error {
+        color: red !important;
+    }
+
+    &--warning {
+        color: goldenrod !important;
+    }
+}

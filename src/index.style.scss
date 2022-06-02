@@ -1,0 +1,73 @@
+
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.focusable {
+    text-decoration: none;
+    text-align:      start;
+    background:      none;
+
+    width:   100%;
+    border:  none;
+    padding: 0;
+}
+
+.body {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    height: 100%;
+    margin: 0;
+    background-color: #003155;
+}
+
+html {
+    height: 100%;
+}
+
+.disable-hover {
+    pointer-events: none;
+}
+
+@font-face {
+    font-family: "Graduate";
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+
+    src:
+            url("resources/fonts/Graduate-Regular.woff2") format("woff2"),
+            url("resources/fonts/Graduate-Regular.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Rajdhani";
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+
+    src:
+            url("resources/fonts/Rajdhani-SemiBold.woff2") format("woff2"),
+            url("resources/fonts/Rajdhani-SemiBold.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Rajdhani";
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+
+    src:
+            url("resources/fonts/Rajdhani-Medium.woff2") format("woff2"),
+            url("resources/fonts/Rajdhani-Medium.woff") format("woff");
+}

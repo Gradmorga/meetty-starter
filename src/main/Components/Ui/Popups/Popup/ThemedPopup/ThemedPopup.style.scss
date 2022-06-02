@@ -1,0 +1,22 @@
+
+.popup--normal {
+  background-color: #001A31;
+  border-radius: 5px;
+
+
+  &-enter { opacity: 0; }
+
+  &-enter-active {
+    opacity: 1;
+    transition: opacity .4s ease-in-out;
+  }
+
+  &-exit { opacity: 1; }
+
+  &-exit-active {
+    opacity: 0;
+    transition: opacity .4s ease-in-out;
+  }
+
+  &-exit-done { opacity: 0; }
+}

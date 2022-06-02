@@ -1,0 +1,116 @@
+
+
+.calibration {
+    position: fixed;
+
+    padding: 15px;
+
+    background-color: rgba(0, 0, 0, .8);
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    color: red;
+
+    & :nth-child(1) {
+
+    }
+
+    & :nth-child(2) {
+        left: 50vw;
+    }
+
+    & :nth-child(3) {
+        left: 95vw;
+    }
+
+    & :nth-child(4) {
+        top: 50vh;
+    }
+
+    & :nth-child(5) {
+        top: 50vh;
+        left: 50vw;
+    }
+
+    & :nth-child(6) {
+        top: 50vh;
+        left: 95vw;
+    }
+
+    & :nth-child(7) {
+        top: 90vh;
+    }
+
+    & :nth-child(8) {
+        top: 90vh;
+        left: 50vw;
+    }
+
+    & :nth-child(9) {
+        top: 90vh;
+        left: 95vw;
+    }
+
+
+    &-enter {
+        opacity: 0;
+    }
+
+    &-enter-active {
+        opacity: 1;
+        transition: opacity 1s;
+    }
+
+    &-exit {
+        opacity: 1;
+    }
+
+    &-exit-active {
+        opacity: 0;
+        transition: opacity 1s;
+    }
+
+    &-exit-done {
+        opacity: 0;
+    }
+}
+
+.calibration__point {
+    width: 35px;
+    height: 35px;
+    border-radius: 30px;
+    border: none;
+
+    background-color: #001A31;
+
+    position: absolute;
+}
+
+.calibration__point--done {
+    background-color: green;
+}
+
+.calibration__skip {
+    position: fixed;
+    bottom:   5vh;
+    right:    20vw;
+
+    padding:       10px 30px;
+    border:        none;
+    border-bottom: 2px solid red;
+
+    color: red;
+    background-color: transparent;
+
+    font-weight:    bold;
+    font-size:      23px;
+    text-transform: uppercase;
+
+    &:hover {
+        background-color: red;
+        color: black;
+    }
+}

@@ -1,0 +1,14 @@
+
+@import "../../../../global/vars.style";
+
+.button {
+  font-size: 18px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 20px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 22px;
+  }
+}

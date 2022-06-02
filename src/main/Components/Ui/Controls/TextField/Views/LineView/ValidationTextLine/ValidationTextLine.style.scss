@@ -1,0 +1,12 @@
+
+
+.text-line {
+
+  &--error {
+    border-bottom-color: red !important;
+  }
+
+  &--warning {
+    border-bottom-color: goldenrod !important;
+  }
+}

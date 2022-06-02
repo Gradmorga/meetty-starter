@@ -1,0 +1,17 @@
+
+@import "../../../../../../global/vars.style";
+
+
+.combobox {
+  position: relative;
+
+  &__dropdown {
+    top:      120%;
+    left:     0;
+    right:    0;
+  }
+
+  &__items {
+    height: 200px;
+  }
+}
