@@ -9,11 +9,9 @@ import ThemedLabelDelegate from "./ThemedLabelDelegate/ThemedLabelDelegate.compo
 
 
 const LabelDelegate = ({ children, classes = [], item, onClick }) => (
-    <button className="focusable" type="button" onClick={onClick}>
-        <p className={`label-item ${classes.join(" ")}`}>
-            { item.label }
-            { children }
-        </p>
+    <button className={`label-item ${classes.join(" ")}`} type="button" onClick={onClick}>
+        { item.label }
+        { children }
     </button>
 );
 

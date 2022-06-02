@@ -1,8 +1,16 @@
 
 
 .label-item {
+    box-sizing: border-box;
     margin: 0;
     padding: 20px 0 20px 10px;
 
+    border: none;
+
+    width: 100%;
+
+    font-family: "Rajdhani", serif;
+    font-weight: 600;
     font-size:   17px;
+    text-align:  left;
 }

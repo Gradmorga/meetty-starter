@@ -10,11 +10,9 @@ import ValidationLabelField from "./ValidationLabelField/ValidationLabelField.co
 
 
 const LabelField = ({ children, classes = [], item, onClick }) => (
-    <button className="focusable" type="button" onClick={onClick}>
-        <p className={`label-field  ${ classes.join(" ") }`}>
-            { item.label }
-            { children }
-        </p>
+    <button className={`label-field ${ classes.join(" ") }`} type="button" onClick={onClick}>
+        { item.label }
+        { children }
     </button>
 );
 

@@ -11,13 +11,13 @@ const ComboboxView = ({
                           classes = [], isOpen, currentIndex, onClick, onItemClicked, model, message, required = false
 }) => (
     <div className={`combobox ${classes.join(" ")}`} >
-        <IField item={model.itemAt(currentIndex)} required={required} onClick={onClick} message={message} />
+        <IField classes={["combobox__field"]} item={model.itemAt(currentIndex)} required={required} onClick={onClick} message={message} />
 
         <IDropdown classes={["combobox__dropdown"]} isOpen={isOpen} onOutsideClick={onClick} >
             <ListView
                 Delegate={Delegate}
                 currentIndex={currentIndex}
-                classes={["combobox__items"]}
+                classes={["combobox__list"]}
                 model={model}
                 onItemClicked={onItemClicked}
             />
