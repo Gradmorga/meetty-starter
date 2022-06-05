@@ -35,29 +35,29 @@ const useScrollable = onScrolled => {
     const onTouchStart = React.useCallback(e => {
         if (e.type === "touchstart") {
 
-            const firstTouch = e.touches[0];
+            const { clientX, clientY } = e.touches[0];
 
-            touchData.current.xDown = firstTouch.clientX;
-            touchData.current.yDown = firstTouch.clientY;
+            touchData.current.xDown = clientX;
+            touchData.current.yDown = clientY;
 
-            e.preventDefault();
             e.stopPropagation();
         }
     }, []);
 
     // eslint-disable-next-line
     const onTouchMove = React.useCallback(throttle(e => {
+
         if (e.type === "touchmove") {
+
             if (!touchData.current.xDown || !touchData.current.yDown)
                 return;
 
-            const xUp = e.touches[0].clientX;
-            const yUp = e.touches[0].clientY;
-
-            const { current } = callbackRef;
+            const { clientX: xUp, clientY: yUp } = e.touches[0];
 
             const xDiff = touchData.current.xDown - xUp;
             const yDiff = touchData.current.yDown - yUp;
+
+            const { current } = callbackRef;
 
             if (Math.abs(xDiff) > Math.abs(yDiff))
                 current.onScrolled(xDiff > 0 ? Direction.RIGHT : Direction.LEFT);
@@ -72,11 +72,7 @@ const useScrollable = onScrolled => {
         }
     }, 700), [callbackRef]);
 
-    return {
-        onWheel,
-        onTouchStart,
-        onTouchMove
-    };
+    return { onWheel, onTouchStart, onTouchMove };
 };
 
 
