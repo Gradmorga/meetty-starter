@@ -7,11 +7,9 @@ import React    from 'react';
 import { ClicklessProvider  } from "../react/Providers/Clickless/clickless.provider";
 import { NavigatorProvider  } from "../react/Providers/Navigator/navigator.provider";
 
-import useDisableHover from "../react/Hooks/useDisableHover";
-
-import NavBar   from "../Components/Navigation/NavBar/NavBar.component";
-import Header   from "../Components/Ui/Header/Header.component";
-import Endpoints   from "../Components/Navigation/Endpoints/Endpoints.component";
+import NavBar    from "../Components/Navigation/NavBar/NavBar.component";
+import Header    from "../Components/Ui/Header/Header.component";
+import Endpoints from "../Components/Navigation/Endpoints/Endpoints.component";
 
 import Utp      from "../Components/Sections/utp/Utp.component";
 import Features from "../Components/Sections/features/Features.component";
@@ -78,8 +76,6 @@ const medias = [
 
 
 export default function App() {
-
-    useDisableHover();
 
     const [isLoading,    setLoading   ] = React.useState(false);
     const [isDialogOpen, setDialogOpen] = React.useState(false);
