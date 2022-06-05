@@ -3,10 +3,10 @@
 import React     from 'react';
 import PropTypes from "prop-types";
 
-//import Image from "../Image/Image.component";
+import Image from "../Image/Image.component";
 
 
-const Picture = ({children, sourcesSet}) => (
+const Picture = ({ children, sourcesSet }) => (
     <picture>
         { sourcesSet.map((source, index) => <source key={index} srcSet={source.srcSet.join(", ")} media={source.media}/>) }
         { children }
@@ -15,7 +15,7 @@ const Picture = ({children, sourcesSet}) => (
 
 
 Picture.propTypes = {
-    //children: PropTypes.objectOf(Image).isRequired,
+    children: PropTypes.oneOfType([Image]).isRequired,
     sourcesSet:
         PropTypes.arrayOf(
             PropTypes.exact({
