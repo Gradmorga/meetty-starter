@@ -14,7 +14,12 @@ const Themed = View => ({ classes = [], ...props }) => (
 
 
 const ListView = ({ Delegate, classes = [], model, currentIndex, onItemClicked }) => (
-    <List classes={["list-view", ...classes]} >
+    <List
+        classes={["list-view", ...classes]}
+        onWheel={e => e.stopPropagation()}
+        onTouchStart={e => e.stopPropagation()}
+        onTouchMove={e => e.stopPropagation()}
+    >
         {
             model.model.map((item, index) => (
                 <li key={index}>
