@@ -36,7 +36,6 @@ const useClickless = () => {
         if (!componentClicklessData.current.activator)
             return;
 
-        //TODO: Last one...the last...
         setClickless((prevState) => {
             if (prevState.isForceActive)
                 return prevState;

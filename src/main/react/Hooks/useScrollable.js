@@ -33,43 +33,40 @@ const useScrollable = onScrolled => {
     });
 
     const onTouchStart = React.useCallback(e => {
-        if (e.type === "touchstart") {
 
-            const { clientX, clientY } = e.touches[0];
+        const { clientX, clientY } = e.touches[0];
 
-            touchData.current.xDown = clientX;
-            touchData.current.yDown = clientY;
+        touchData.current.xDown = clientX;
+        touchData.current.yDown = clientY;
 
-            e.stopPropagation();
-        }
+        e.stopPropagation();
+
     }, []);
 
     // eslint-disable-next-line
     const onTouchMove = React.useCallback(throttle(e => {
 
-        if (e.type === "touchmove") {
+        if (!touchData.current.xDown || !touchData.current.yDown)
+            return;
 
-            if (!touchData.current.xDown || !touchData.current.yDown)
-                return;
+        const { clientX: xUp, clientY: yUp } = e.touches[0];
 
-            const { clientX: xUp, clientY: yUp } = e.touches[0];
+        const xDiff = touchData.current.xDown - xUp;
+        const yDiff = touchData.current.yDown - yUp;
 
-            const xDiff = touchData.current.xDown - xUp;
-            const yDiff = touchData.current.yDown - yUp;
+        const { current } = callbackRef;
 
-            const { current } = callbackRef;
+        if (Math.abs(xDiff) > Math.abs(yDiff))
+            current.onScrolled(xDiff > 0 ? Direction.RIGHT : Direction.LEFT);
+        else
+            current.onScrolled(yDiff < 0 ? Direction.UP : Direction.DOWN);
 
-            if (Math.abs(xDiff) > Math.abs(yDiff))
-                current.onScrolled(xDiff > 0 ? Direction.RIGHT : Direction.LEFT);
-            else
-                current.onScrolled(yDiff < 0 ? Direction.UP : Direction.DOWN);
+        touchData.current.xDown = null;
+        touchData.current.yDown = null;
 
-            touchData.current.xDown = null;
-            touchData.current.yDown = null;
+        e.preventDefault();
+        e.stopPropagation();
 
-            e.preventDefault();
-            e.stopPropagation();
-        }
     }, 700), [callbackRef]);
 
     return { onWheel, onTouchStart, onTouchMove };

@@ -167,16 +167,16 @@
         right:    50%;
         top:      110%;
 
-        border-top:    5px solid transparent;
-        border-bottom: 5px solid transparent;
-        border-left:   5px solid black;
+        border-top:    7px solid transparent;
+        border-bottom: 7px solid transparent;
+        border-left:   7px solid black;
 
         transition: background-color, right .5s ease-in-out;
 
         @media (min-width: $tablet-width) {
-            border-top:    15px solid transparent;
-            border-bottom: 15px solid transparent;
-            border-left:   15px solid black;
+            border-top:    10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left:   10px solid black;
         }
     }
 }
