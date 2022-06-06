@@ -9,7 +9,12 @@ import ThemedDropdown from "./ThemedDropdown/ThemedDropdown.component";
 
 
 const Dropdown = ({ children, classes = []}) => (
-    <div className={`dropdown ${classes.join(" ")}`}>
+    <div
+        className={`dropdown ${classes.join(" ")}`}
+        onWheel={e => e.stopPropagation()}
+        onTouchStart={e => e.stopPropagation()}
+        onTouchMove={e => e.stopPropagation()}
+    >
         { children }
     </div>
 );
