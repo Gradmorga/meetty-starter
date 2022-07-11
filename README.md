@@ -6,7 +6,7 @@ There are short "friezes" in the video with eye control. This is due to the work
 ### Features
 
 - Code splitting
-- An adaptive UI
+- Adaptive UI
 - Eyes control mode using prepared neural network
 - Multistage build process using Docker
 - Serving build files on nginx
